@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>基本地图展示</title>
+    <meta name="author" content="xian">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script src="http://webapi.amap.com/maps?v=1.3&key=您申请的key值"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=59a61352bd5d88b3fddbf91391006474"></script>
+    <link rel="stylesheet" type="text/css" href="style/map.css">
+</head>
+
+<body>
+   <div id="map"></div>
+   <!--显示地点详情-->
+   <div id="panel"></div>
+   <input type="text" id="input">
+   <button onclick="search();" id="button1">search</button>
+   <!--显示俩个地点间路线-->
+   <input type="text" id="input1">
+   <input type="text" id="input2">
+   <button onclick="searchDriving();" id="button2">search</button>
+   <script type="text/javascript" src="javascript/map.js"></script>
+</body>
+</html>
