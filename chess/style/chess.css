@@ -1,0 +1,20 @@
+#chess
+{
+	margin: 50px auto;
+	display: block;
+	box-shadow: -2px -2px 2px #eee, 3px 3px 2px #d47777;
+}
+button
+{
+	width:130px;
+	height:40px;
+	border:1px solid #d45d5c;
+	border-radius: 5px;
+	background:#d45d5c;
+	position:relative;
+	left:50%;
+	transform: translate(-50%,0);
+	bottom:20px;
+	color:white;
+	font-size:18px;
+}
