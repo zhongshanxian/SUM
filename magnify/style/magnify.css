@@ -1,0 +1,51 @@
+.smallimg
+{
+	width: 400px;
+	margin: 20px;
+}
+.bigimg
+{
+	width: 800px;
+}
+section
+{
+	display: block;
+	width: 440px;
+	height: 290px;
+	margin: 20px;
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+#smallBox
+{
+	position: relative;
+	z-index: 1;
+}
+#floatBox
+{
+	display: none;
+	width: 160px;
+	height: 120px;
+	position: absolute;
+	background: rgba(255,255,200,0.4);
+	border: 1px solid #bbb;
+	cursor: crosshair;
+}
+#bigBox
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 460px;
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	z-index: 1;
+}
+#bigBox img
+{
+	position: absolute;
+	z-index: 5;
+}
