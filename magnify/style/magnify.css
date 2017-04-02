@@ -22,6 +22,16 @@ section
 	position: relative;
 	z-index: 1;
 }
+#mark/*宽高必须与smallbox的一致==section*/
+{
+	position: absolute;
+	display: block;
+	width: 440px;
+	height: 290px;
+	z-index: 10;
+	cursor: crosshair;
+	/*background: rgba(255,255,255,0);*//*若不设置背景，部分ie浏览器不能显示floatbox*/
+}
 #floatBox
 {
 	display: none;
