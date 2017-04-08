@@ -7,7 +7,7 @@ body
 	width: 540px;
 	border: 1px solid #e5e5e5;
 	background: #fff;
-	margin: 30px auto;
+	margin: 50px auto;
 }
 .scroll-tab
 {
@@ -19,7 +19,7 @@ body
 .scroll-tab .tab-item
 {
 	float: left;
-	font: 14px/34px "Microsoft Yahei";
+	font: 14px/34px "Microsoft YaHei";
 	height: 34px;
 	text-align: center;
 	border-right: 1px solid #e5e5e5;
@@ -39,6 +39,10 @@ body
 	height: 300px;
 	position: relative;
 }
+.scroll-ol
+{
+	padding-bottom: 1px;
+}
 .scroll-wrap .scroll-cont
 {
 	height: 100%;
@@ -47,7 +51,7 @@ body
 }
 .scroll-wrap .scroll-cont h3
 {
-	font: 16px/3 "Microsoft Yahei";
+	font: 16px/3 "Microsoft YaHei";
 	text-align: center;
 }
 .scroll-wrap .scroll-cont
@@ -73,5 +77,6 @@ body
 	left: 1px;
 	width: 8px;
 	height: 30px;
-	background-color: #fff;
+	background-color: #000;
+	border-radius: 30%;
 }
