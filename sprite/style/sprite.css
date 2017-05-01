@@ -1,0 +1,68 @@
+.cat
+{
+    width:150px;
+    background:#f8f8f8;
+    border:1px solid #bbb;
+} 
+ul
+{
+    list-style:none;
+    width:130px;
+}
+li
+{
+    border-bottom:1px solid #ccc;
+    height:31px;
+    line-height:31px;
+    margin-left: 18px;
+}
+h3
+{
+    font-size:14px;
+    font-weight:400;
+}
+h3,ul
+{
+    margin:0;
+    padding:0;
+}
+ul li i
+{
+    background-image: url(http://img.mukewang.com/539a950e00015ba500710200.jpg);
+    width: 30px;
+    height: 24px;
+    float: left;
+    margin:3px 8px 0 3px;
+}
+.cat-1 i
+{
+    background-position: 0 0;
+}
+.cat-2 i
+{
+    background-position: 0 -24px;
+}
+.cat-3 i
+{
+    background-position: 0 -48px;
+}
+.cat-4 i
+{
+    background-position: 0 -72px;
+}
+.cat-5 i
+{
+    background-position: 0 -96px;
+}
+.cat-6 i
+{
+    background-position: 0 -120px;
+}
+.cat-7 i
+{
+    background-position: 0 -144px;
+}
+.cat-8 i
+{
+    background-position: 0 -168px;
+}
