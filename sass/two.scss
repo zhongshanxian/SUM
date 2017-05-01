@@ -1,0 +1,14 @@
+
+$color: orange !default;
+.block {
+  color: $color;
+}
+em {
+  $color: green;
+  a {
+    color: $color;
+  }
+}
+span {
+  color: $color;
+}
