@@ -102,7 +102,7 @@ button/*移除选中时出现的框 */
 {
   background-color:#d45d5c;
   width:300px;
-  height:100px;
+  height:0px;
   position:absolute;
   bottom:0px;
   left:50%;
