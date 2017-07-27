@@ -1,0 +1,77 @@
+1.用cmd查询数据库的内容
+SHOW DATABASES; 
+SHOW TABLES;
+SHOW COLUMNS FROM 数据表;
+SHOW INDEX FROM 数据表;
+SHOW TABLE STATUS LIKE [FROM db_name] [LIKE 'pattern'] \G;
+	mysql> SHOW TABLE STATUS  FROM RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息
+	mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%';     # 表名以runoob开头的表的信息
+	mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;   # 加上 \G，查询结果按列打印
+use myDbB;选中该数据库
+
+2.选取一个数据库
+mysqli_select_db(connection,dbname);
+
+3.数据类型
+http://www.runoob.com/mysql/mysql-data-types.html
+
+4.建表可以使用php或者cmd。
+
+5.插入数据：使用 INSERT INTO SQL语句来插入数据
+
+6.读取数据：select * from runoob_tbl;
+where和binary关键字，binary区分大小写
+mysql> SELECT * from runoob_tbl WHERE BINARY runoob_author='runoob.com';
+mysql> SELECT * from runoob_tbl WHERE BINARY runoob_author='RUNOOB.COM';
+
+7.MySQL UNION 操作符用于连接两个以上的 SELECT 语句的结果组合到一个结果集合中。多个 SELECT 语句会删除重复的数据。
+
+8.order by 排序 ASC升序，desc降序
+
+9.使用 GROUP BY 语句 将数据表按名字进行分组，并统计每个人有多少条记录：
+SELECT name, COUNT(*) FROM   employee_tbl GROUP BY name;
+数据表按名字进行分组，再统计每个人登录的次数：
+SELECT name, SUM(singin) as singin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;
+
+10.如果a==null,则选择b；如果b==null,则选择c；如果a!=null,则选择a；如果a b c 都为null ，则返回为null（没意义）
+select coalesce(a,b,c)
+
+11.连接以上两张表来读取runoob_tbl表中所有runoob_author字段在tcount_tbl表对应的runoob_count字段值
+SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a INNER JOIN tcount_tbl b ON a.runoob_author = b.runoob_author;
+等价于
+SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a, tcount_tbl b WHERE a.runoob_author = b.runoob_author;
+SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a LEFT JOIN tcount_tbl b ON a.runoob_author = b.runoob_author;
+SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a RIGHT JOIN tcount_tbl b ON a.runoob_author = b.runoob_author;
+
+12.正则表达式匹配
+SELECT name FROM person_tbl WHERE name REGEXP '^st';
+
+13.需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务
+事务用来管理 insert,update,delete 语句
+MYSQL 事务处理主要有两种方法：
+1、用 BEGIN, ROLLBACK, COMMIT来实现
+BEGIN 开始一个事务
+ROLLBACK 事务回滚
+COMMIT 事务确认
+2、直接用 SET 来改变 MySQL 的自动提交模式:
+SET AUTOCOMMIT=0 禁止自动提交
+SET AUTOCOMMIT=1 开启自动提交
+
+14.删除表中的某一列；
+ALTER TABLE testalter_tbl  DROP i;
+添加一列在末尾
+ALTER TABLE testalter_tbl ADD i INT;
+ALTER TABLE testalter_tbl ADD i INT FIRST;
+ALTER TABLE testalter_tbl ADD i INT AFTER c;
+修改字段类型及名称
+字段 c 的类型从 CHAR(1) 改为 CHAR(10)
+ALTER TABLE testalter_tbl MODIFY c CHAR(10)
+CHANGE 关键字之后，紧跟着的是你要修改的字段名，然后指定新字段名及类型
+ALTER TABLE testalter_tbl CHANGE j j INT;
+使用 ALTER 来修改字段的默认值
+ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;
+ALTER 命令及 DROP子句来删除字段的默认值
+ALTER TABLE testalter_tbl ALTER i DROP DEFAULT;
+
+15.MySQL索引
+http://www.runoob.com/mysql/mysql-index.html
