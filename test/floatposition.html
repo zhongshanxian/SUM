@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>position布局和float</title>
+	<meta charset="utf-8">
+	<meta name="author" content="xian">
+	<style type="text/css">
+	.boxpar {
+  	background: #e8eae9;
+	}
+	.box {
+	  background: #8ec63f;
+	  height: 100px;
+	  float: left;
+	  margin: 10px;
+	  width: 200px;
+	}	
+	/*方法一*/
+	.boxlast
+	{
+		clear: both;
+	}
+	/*方法二*/
+	.boxpar1 {
+  	background: #e8eae9;
+  	overflow: auto;
+	}
+	/*方法三*/
+	.boxpar2:before,
+	.boxpar2:after {
+	  content: "";
+	  display: table;
+	}
+	.boxpar2:after {
+	  clear: both;
+	}
+	.boxpar2 {
+		background: #e8eae9;
+	  *zoom: 1;/*IE6和7*/
+	}
+	</style>
+</head>
+
+<body>
+	<div class="boxpar">
+	  <div class="box">Box 12</div>
+	  <div class="box">Box 2</div>
+	  <div class="box">Box 3</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>方法一:利用clear both</p>
+	<div class="boxpar">
+	  <div class="box">Box 13</div>
+	  <div class="box">Box 2</div>
+	  <div class="box">Box 3</div>
+	  <div class="boxlast"></div>
+	</div>
+	<br>
+	<p>方法二:利用overflow：auto</p>
+	<div class="boxpar1">
+	  <div class="box">Box 14</div>
+	  <div class="box">Box 2</div>
+	  <div class="box">Box 3</div>
+	</div>
+	<br>
+	<br>
+	<p>方法三:利用clearfix技巧</p>
+	<div class="boxpar2">
+	  <div class="box">Box 14</div>
+	  <div class="box">Box 2</div>
+	  <div class="box">Box 3</div>
+	</div>
+</body>
+</html>
