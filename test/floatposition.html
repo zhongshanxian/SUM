@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="xian">
 	<style type="text/css">
+	/*清除浮动css*/
 	.boxpar {
   	background: #e8eae9;
 	}
@@ -38,6 +39,79 @@
 		background: #e8eae9;
 	  *zoom: 1;/*IE6和7*/
 	}
+	/*position布局css*/
+	.pospar	{
+		background-color: #e8eae9;
+	}
+	.pos {
+		background-color: #8ec63f;
+		width: 100px;
+		height: 100px;
+		border:1px solid black;
+	}
+	/*relative*/
+	.posrel {
+		background-color: #8ec63f;
+		width: 100px;
+		height: 100px;
+		border:1px solid black;
+		position: relative;
+	}
+	.box1 {
+		top: 10px;
+	}
+	.box2 {
+		left: 10px;
+	}
+	.box3 {
+		bottom: 10px;
+	}
+	/*absolute*/
+	.pospar1 {
+		background-color: #e8eae9;
+		position: relative;
+		width: 600px;
+		height: 400px;
+	}
+	.posabs {
+		background-color: #8ec63f;
+		width: 100px;
+		height: 100px;
+		border:1px solid black;
+		position: absolute;
+	}
+	.box11 {
+		top: 120px;
+	}
+	.box22 {
+		right: 50px;
+	}
+	.box33 {
+		bottom: 10px;
+	}
+	/*fixed*/
+	.pospar2 {
+		background-color: #e8eae9;
+		width: 600px;
+		height: 400px;
+	}
+	.posfix {
+		background-color:red;
+		width: 100px;
+		height: 100px;
+		border:1px solid black;
+		position: fixed;
+	}
+	.box111 {
+		top: 120px;
+	}
+	.box222 {
+		top:50px;/*若只设定left/right不会显示*/
+		right: 20px;
+	}
+	.box333 {
+		bottom: 10px;
+	}
 	</style>
 </head>
 
@@ -61,20 +135,51 @@
 	  <div class="box">Box 3</div>
 	  <div class="boxlast"></div>
 	</div>
-	<br>
+
 	<p>方法二:利用overflow：auto</p>
 	<div class="boxpar1">
 	  <div class="box">Box 14</div>
 	  <div class="box">Box 2</div>
 	  <div class="box">Box 3</div>
 	</div>
-	<br>
-	<br>
+
 	<p>方法三:利用clearfix技巧</p>
 	<div class="boxpar2">
 	  <div class="box">Box 14</div>
 	  <div class="box">Box 2</div>
 	  <div class="box">Box 3</div>
+	</div>
+
+	<p>正常情况下的盒子</p>
+	<div class="pospar">
+		<div class="pos">正常</div>
+		<div class="pos">1</div>
+		<div class="pos">2</div>
+		<div class="pos">3</div>
+	</div>
+
+	<p>relative</p>
+	<div class="pospar">
+		<div class="posrel">正常</div>
+		<div class="posrel box1">1</div>
+		<div class="posrel box2">2</div>
+		<div class="posrel box3">3</div>
+	</div>
+
+	<p>absolute</p>
+	<div class="pospar1">
+		<div class="posabs">正常</div>
+		<div class="posabs box11">1</div>
+		<div class="posabs box22">2</div>
+		<div class="posabs box33">3</div>
+	</div>
+
+	<p>fixed</p>
+	<div class="pospar2">
+		<div class="posfix">正常</div>
+		<div class="posfix box111">1</div>
+		<div class="posfix box222">2</div>
+		<div class="posfix box333">3</div>
 	</div>
 </body>
 </html>
