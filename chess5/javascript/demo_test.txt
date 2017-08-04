@@ -1,0 +1,1 @@
+<canvas id="chessBox" width="450" height="450" onload="onloadFn()">您的浏览器不支持canvas功能</canvas>
