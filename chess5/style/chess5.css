@@ -1,0 +1,7 @@
+#chessBox {
+	box-shadow: -2px -2px 2px #333, 2px 2px 2px #333;
+}
+div {
+	margin: 50px auto;
+	width: 460px;
+}
