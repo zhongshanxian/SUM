@@ -1,7 +1,8 @@
 var chessBox = [];//存储位置，防止重复
 var me=true;//轮流下棋
 var over=false;//判断棋局是否结束
-//赢法数组，三位数组，保存所有赢法
+
+//赢法数组，三维数组，保存所有赢法
 var wins=[];
 
 //赢法统计数组
@@ -79,6 +80,7 @@ for(var i=0; i<11; i++)//赢法种类（反斜） 11表示还要预留四行
 				count++;
 			}
 	}
+	console.log(count);
 //************************
 for(var i=0; i<count; i++)
 	{
