@@ -3,13 +3,13 @@ body {
 }
 .all_bg {
 	width: 800px;
-	height: 600px;
+	height: 550px;
 	margin: 0 auto;
 }
 #allcanvas {
 	position: relative;
 	width: 800px;
-	height: 600px;
+	height: 550px;
 	margin: 0;
 }
 #canvas1,
