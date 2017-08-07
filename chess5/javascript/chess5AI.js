@@ -105,12 +105,12 @@ function initChessBox(){
 		context.drawImage(bgPic,0,0,450,450);//先画背景，再画棋盘
 		for(var i=0;i<15;i++)
 		{
-			//先画横线
+			//先画竖线
 			context.moveTo(15+i*30,15);
 			context.lineTo(15+i*30,435);
 			context.strokeStyle="#aaa";
 			context.stroke();
-			//后画竖线
+			//后画横线
 			context.moveTo(15,15+i*30);
 			context.lineTo(435,15+i*30);
 			context.strokeStyle="#aaa";

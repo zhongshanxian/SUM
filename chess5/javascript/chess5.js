@@ -84,7 +84,8 @@ function winarrFn(){
 	}
 	for(var i=0;i<count;i++)
 	{
-		//把572种赢法放进去自己和你的赢数组里面
+		//把572种赢法放进去白黑棋的赢数组里面
+		//黑白棋的赢法数组里面有572种赢法，每种赢法初始化为0，表示没有一个棋子
 		blackwin[i]=0;
 		whitewin[i]=0;
 		//每种赢法需集齐五个棋子，每个棋子一分，所以当mywin[i]==5才赢
@@ -103,12 +104,12 @@ function initChessBox(){
 		context.drawImage(bgPic,0,0,450,450);//先画背景，再画棋盘
 		for(var i=0;i<15;i++)
 		{
-			//先画横线
+			//先画竖线
 			context.moveTo(15+i*30,15);
 			context.lineTo(15+i*30,435);
 			context.strokeStyle="#aaa";
 			context.stroke();
-			//后画竖线
+			//后画横线
 			context.moveTo(15,15+i*30);
 			context.lineTo(435,15+i*30);
 			context.strokeStyle="#aaa";
