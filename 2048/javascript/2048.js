@@ -177,8 +177,8 @@ $(document).keydown(function(event){
 			event.preventDefault();
 			if(moveLeft())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 			break;
 		//up
@@ -186,8 +186,8 @@ $(document).keydown(function(event){
 			event.preventDefault();
 			if(moveUp())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 			break;
 		//right
@@ -195,8 +195,8 @@ $(document).keydown(function(event){
 			event.preventDefault();
 			if(moveRight())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 			break;
 		//down
@@ -204,8 +204,8 @@ $(document).keydown(function(event){
 			event.preventDefault();
 			if(moveDown())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 			break;
 		default:
@@ -233,7 +233,7 @@ document.addEventListener("touchend",function(event){
 	var deltax=endx-startx;
 	var deltay=endy-starty;
 
-	if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth)//避免与点击混淆
+	if(Math.abs(deltax)<0.1*documentWidth&&Math.abs(deltay)<0.1*documentWidth)//避免与点击混淆
 	{
 		return;
 	}
@@ -245,8 +245,8 @@ document.addEventListener("touchend",function(event){
 			//moveright
 			if(moveRight())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 		}
 		else
@@ -254,8 +254,8 @@ document.addEventListener("touchend",function(event){
 			//moveleft
 			if(moveLeft())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 		}
 	}
@@ -267,8 +267,8 @@ document.addEventListener("touchend",function(event){
 			//movedown
 			if(moveDown())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 		}
 		else
@@ -276,8 +276,8 @@ document.addEventListener("touchend",function(event){
 			//moveup
 			if(moveUp())
 			{
-				setTimeout("generateOneNumber()",210);
-				setTimeout("isgameover()",300);
+				setTimeout("generateOneNumber()",100);
+				setTimeout("isgameover()",190);
 			}
 		}
 	}
@@ -347,7 +347,7 @@ function moveLeft(){
 				}
 			}
 		}
-		setTimeout("updateBoardView()",200);
+		setTimeout("updateBoardView()",100);
 		return true;
 	}
 }
@@ -403,7 +403,7 @@ function moveRight(){
 				}
 			}
 		}
-		setTimeout("updateBoardView()",200);
+		setTimeout("updateBoardView()",100);
 		return true;
 	}
 }
@@ -458,7 +458,7 @@ function moveUp(){
 				}
 			}
 		}
-		setTimeout("updateBoardView()",200);
+		setTimeout("updateBoardView()",100);
 		return true;
 	}
 }
@@ -513,7 +513,7 @@ function moveDown(){
 				}
 			}
 		}
-		setTimeout("updateBoardView()",200);
+		setTimeout("updateBoardView()",100);
 		return true;
 	}
 }
