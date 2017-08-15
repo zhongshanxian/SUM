@@ -7,6 +7,10 @@
   <body>
   	<header>
   		<h1><%= title %></h1>
+      <ul class="type" id="type">
+        <li date-type="dot">Dot</li>
+        <li date-type="column" class="selected">Column</li>
+      </ul>
       <p>
         Volume <input id="volume" type="range" min="0" max="100" value="30">
       </p>
@@ -20,7 +24,8 @@
     	</ul>
     </div>
 
-    <div class="right"></div>
+    <div class="right" id="box"></div>
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script> 
   <script type="text/javascript" src="/javascripts/index.js"></script> 
   </body>
 </html>

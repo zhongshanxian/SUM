@@ -1,7 +1,22 @@
+var lis=$("#list li");
+var size=128;
+
+var box=$("#box")[0];
+var height,width;
+var canvas=document.createElement("canvas");
+var ctx=canvas.getContext("2d");
+box.appendChild(canvas);
+var Dots=[];
+var line;
+
+var mv=new MusicVisualizer({
+	size: size,
+	visualizer: draw
+});
 function $(s){
 	return document.querySelectorAll(s);
 }
-var lis=$("#list li");
+
 for(var i=0;i<lis.length;i++)
 {
 	lis[i].onclick = function(){
@@ -10,72 +25,89 @@ for(var i=0;i<lis.length;i++)
 			lis[j].className = "";
 		}
 		this.className = "selected";
-		load("/media/"+this.title);
+		//load("/media/"+this.title);
+		mv.play("/media/"+this.title);
 	}
 }
 
-var xhr = new XMLHttpRequest();
-var ac = new (window.AudioContext||window.webkitAudioContext)();
-var gainNode = ac[ac.createGain?"createGain":"createGainNode"]();
-gainNode.connect(ac.destination);
+function random(m,n){
+	return Math.round(Math.random()*(n-m)+m);
+}
 
-var analyser = ac.createAnalyser();
-analyser.fftSize=512;
-analyser.connect(gainNode);
-
-var source = null;
-
-var count = 0;
-
-function load(url){
-	var n=++count;
-	source && source[source.stop ? "stop":"noteOff"]();
-	xhr.abort();
-	xhr.open("GET", url);
-	xhr.responseType= "arraybuffer";
-	xhr.onload = function(){
-		if(n!=count)
-		{
-			return ;
-		}
-		ac.decodeAudioData(xhr.response, function(buffer){
-			if(n!=count)
-			{
-				return ; 
-			}
-			var bufferSource = ac.createBufferSource();
-			bufferSource.buffer = buffer;
-
-			bufferSource.connect(analyser);
-
-			bufferSource[bufferSource.start?"start":"noteOn"](0);
-			source= bufferSource;
-			visualizer();
-		}, function(err){
-			console.log(err);
+function getDots(){
+	Dots=[];
+	for(var i=0;i<size;i++)
+	{
+		var x=random(0,width);
+		var y=random(0,height);
+		var color="rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")";
+		Dots.push({
+			x:x,
+			y:y,
+			color:color
 		});
 	}
-	xhr.send();
 }
 
-function visualizer(){
-	var arr =new Uint8Array(analyser.frequencyBinCount);
+function resize(){
+	height = box.clientHeight;
+	width	= box.clientWidth;
+	canvas.height=height;
+	canvas.width=width;
+	line= ctx.createLinearGradient(0,0,0,height);
+	line.addColorStop(0,"#ee4b1f");
+	line.addColorStop(0.5,"#f7bc1c");
+	line.addColorStop(1,"#10ae62");
 	
-	requestAnimationFrame=window.requestAnimationFrame||
-												window.webkitRequestAnimationFrame ||
-												window.mozRequestAnimationFrame;
-	function v(){
-		analyser.getByteFrequencyData(arr);
-		requestAnimationFrame(v);
+	getDots();
+}
+
+resize();
+window.onresize=resize;
+
+function draw(arr){
+	ctx.clearRect(0,0,width,height);
+	var w=width/size;
+	ctx.fillStyle=line;
+	for(var i=0;i<size;i++)
+	{
+		if(draw.type=="column")
+		{
+			var h=arr[i] / 256;
+			h=h * height;
+			ctx.fillRect(w*i,height-h,w*0.6,h);
+		}
+		else {
+			ctx.beginPath();
+			var o=Dots[i];
+			var r=arr[i]/256*50;
+			ctx.arc(o.x,o.y,r,0,Math.PI*2,true);
+			var g=ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,r);
+			g.addColorStop(0,"white");
+			g.addColorStop(1,o.color);
+			ctx.fillStyle=g;
+			ctx.fill();
+		}
 	}
-	requestAnimationFrame(v);
 }
 
-visualizer();
+draw.type="column";
 
-function changeVolume(percent){
-	gainNode.gain.value = percent*percent;
-}$("#volume")[0].onchange = function(){
-	changeVolume(this.value/this.max);
+var types=$("#type li");
+for(var i=0;i<types.length;i++)
+{
+	types[i].onclick=function(){
+		for(var j=0;j<types.length;j++)
+		{
+			types[j].className="";
+		}
+		this.className="selected";
+		draw.type=this.getAttribute("date-type");
+	}
 }
+
+$("#volume")[0].onchange = function(){
+	mv.changeVolume(this.value/this.max);
+}
+$("#volume")[0].onchange();
 
