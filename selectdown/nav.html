@@ -4,11 +4,56 @@
 	<title>下拉菜单</title>
 	<meta charset="utf-8">
 	<style type="text/css">
+	  * {
+	  	margin: 0;
+	  	padding: 0;
+	  }
 		#nav {
 			background-color: #eee;
 			width: 600px;
 			height: 40px;
 			margin: 0 auto;
+		}
+		ul {
+			list-style: none;
+		}
+		ul li {
+			float: left;
+			line-height: 40px;
+			text-align: center;
+			position: relative;
+		}
+		ul li:hover ul {
+			display: block;
+		}
+		a {
+			text-decoration: none;
+			color: #333;
+			padding: 0 10px;
+			height: 40px;
+			display: block;/*a标签是行内元素，把它变成块状元素*/
+		}
+		a:hover {
+			color: white;
+			background-color: #666;
+		}
+		ul li ul li {
+			float: none;
+			background-color: #eee;
+			margin-top: 2px;
+		}
+		ul li ul {
+			position: absolute;
+			top:40px;
+			left: 0;
+			display: none;
+		}
+		ul li ul li a {
+			width: 80px;
+		}
+		ul li ul li a:hover {
+			color: white;
+			background-color: #d45d5c;
 		}
 	</style>
 </head>
@@ -16,7 +61,27 @@
 
 <body>
 	<div id="nav">
-		
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">学习教程</a>
+				<ul>
+					<li><a href="#">Bootstrap</a></li>
+					<li><a href="#">jQuery</a></li>
+					<li><a href="#">Ajax</a></li>
+					<li><a href="#">XML</a></li>
+				</ul>
+			</li>
+			<li><a href="#">课程实例</a></li>
+			<li><a href="#">分享交流</a></li>
+			<li><a href="#">关于我们</a>
+				<ul>
+					<li><a href="#">团队介绍</a></li>
+					<li><a href="#">团队成员</a></li>
+					<li><a href="#">加入我们</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 </body>
 </html>
