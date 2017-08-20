@@ -23,9 +23,9 @@
 			text-align: center;
 			position: relative;
 		}
-		ul li:hover ul {
+		/*ul li:hover ul {
 			display: block;
-		}
+		}*/
 		a {
 			text-decoration: none;
 			color: #333;
@@ -56,6 +56,35 @@
 			background-color: #d45d5c;
 		}
 	</style>
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+	/*原生JavaScript
+		function showsubmenu(li){
+			var submenu=li.getElementsByTagName("ul")[0];
+			submenu.style.display="block";
+		}
+		function hidesubmenu(li){
+			var submenu=li.getElementsByTagName("ul")[0];
+			submenu.style.display="none";
+		}
+		*/
+		//jQuery
+		$(document).ready(function(){
+			$("#ulnd").mouseover(function(){
+				$(this).children("ul").show();
+				console.log("mouseover");
+			});
+			$("#ulnd").mouseout(function(){
+				$(this).children("ul").hide();
+				console.log("mouseout");
+			});
+			$("#nav").click(function(){
+				alert("haha");
+			});
+		});
+		
+	</script>
 </head>
 
 
@@ -63,11 +92,12 @@
 	<div id="nav">
 		<ul>
 			<li><a href="#">首页</a></li>
-			<li><a href="#">学习教程</a>
+			<!--<li onmouseover="showsubmenu(this)" onmouseout="hidesubmenu(this)"><a href="#">学习教程</a>-->
+			<li id="ulnd"><a href="#">学习教程</a>
 				<ul>
 					<li><a href="#">Bootstrap</a></li>
 					<li><a href="#">jQuery</a></li>
-					<li><a href="#">Ajax</a></li
+					<li><a href="#">Ajax</a></li>
 				</ul>
 			</li>
 			<li><a href="#">课程实例</a></li>
