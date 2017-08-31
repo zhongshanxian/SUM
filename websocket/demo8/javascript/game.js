@@ -1,4 +1,4 @@
-var game = function() {
+var Game = function() {
 	//dom元素
 	var gameDiv;
 	var nextDiv;
@@ -75,6 +75,13 @@ var game = function() {
 		next = new Square();
 		initDiv(gameDiv, gameData, gameDivs);
 		initDiv(nextDiv, next.data, nextDivs);
+		cur.origin.x = 0;
+		cur.origin.y = Math.floor(Math.random()*7);
+		for(var i=0;i<cur.data.length;i++) {
+			for(var j=0;j<cur.data[0].length;j++) {
+				gameData[cur.origin.x +i][cur.origin.y +j] =cur.data[i][j];
+			}
+		}
 		refreshDiv(gameData, gameDivs);
 		refreshDiv(next.data, nextDivs);
 	}
