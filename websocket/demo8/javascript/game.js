@@ -27,6 +27,11 @@ var game = function() {
 		[0,0,0,0,1,1,1,1,0,0]
 	];
 
+	//当前方块
+	var cur;
+	//下一个方块
+	var next;
+
 	//divs
 	var nextDivs = [];
 	var gameDivs = [];
@@ -61,4 +66,18 @@ var game = function() {
 			}
 		}
 	}
+
+	//初始化
+	var init = function(doms) {
+		gameDiv = doms.gameDiv;
+		nextDiv = doms.nextDiv;
+		cur = new Square();
+		next = new Square();
+		initDiv(gameDiv, gameData, gameDivs);
+		initDiv(nextDiv, next.data, nextDivs);
+		refreshDiv(gameData, gameDivs);
+		refreshDiv(next.data, nextDivs);
+	}
+	//导出API
+	this.init = init;
 }
