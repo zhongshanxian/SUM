@@ -1,0 +1,91 @@
+* {
+	padding: 0;
+	margin:0;
+	color: #333;
+}
+
+
+/*头部*/
+header {
+	border-bottom: 1px solid #e7e7e7;
+	height: 55px;
+	position: relative;
+	font-size: 14px;
+}
+.rg1,
+.rg2,
+.rg3 {
+	position: absolute;
+	line-height: 55px;
+}
+header .rg1 {
+}
+header .rg2 {
+	left: 50%;
+	transform: translateX(-50%);
+}
+header .rg3 {
+	right: 15px;
+}
+header .rg1 img {
+	width: 30px;
+	vertical-align: middle;
+}
+
+/*登录名 */
+.info {
+	width: 94%;
+	margin:0 auto;
+}
+.inputItem {
+	height: 55px;
+	border-bottom: 1px solid #e7e7e7;
+	position: relative;
+}
+.icon1 {
+	height: 18px;
+	width: 30px;
+	position: absolute;
+	top:50%;
+	left:10px;
+	transform: translateY(-50%);
+}
+.icon1 img {
+	width: 18px;
+}
+.inputItem input {
+	padding-left: 40px;
+	height: 55px;
+	border:0;
+	font-size: 10px;
+}
+.inputItem input:focus {
+	outline:medium;
+}
+.code-btn {
+	font-size: 10px;
+	color: white;
+	background: #f6383a;
+	border-radius: 3px;
+	border: 0;
+	height: 35px;
+	padding:5px;
+	position: absolute;
+	top: 50%;
+	right:0;
+	transform: translateY(-50%);
+}
+.foot {
+	margin:55px auto;
+	width: 95%;
+}
+.foot button {
+	font-size: 15px;
+	width: 100%;
+	margin:0 auto 15px;
+	border-radius: 6px;
+  background: #fe1101;
+  color: #fff;
+  height: 40px;
+  border:0;
+}
