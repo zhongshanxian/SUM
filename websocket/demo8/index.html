@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>俄罗斯方块</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
 </head>
+
+
 <body>
-	<div class="game" id="game"></div>
-	<div class="next" id="next"></div>
-	<div class="info">
-		<div>已用时：<span id="time">0</span> s</div>
-		<div>已得分：<span id="score">0</span> 分</div>
+	<div>请用方向键和空格进行操作：左->左移，右->右，下->坠落，空格->旋转</div>
+
+	<div id="waiting"></div>
+
+	<div class="square" id="local">
+		<div class="title">我的游戏区</div>
+		<div class="game" id="local_game"></div>
+		<div class="next" id="local_next"></div>
+		<div class="info">
+			<div>已用时：<span id="local_time">0</span> s</div>
+			<div>已得分：<span id="local_score">0</span> 分</div>
+			<div id="local_gameover"></div>
+		</div>
 	</div>
+
+	<div class="square" id="remote">
+		<div class="title">对方的游戏区</div>
+		<div class="game" id="remote_game"></div>
+		<div class="next" id="remote_next"></div>
+		<div class="info">
+			<div>已用时：<span id="remote_time">0</span> s</div>
+			<div>已得分：<span id="remote_score">0</span> 分</div>
+			<div id="remote_gameover"></div>
+		</div>
+	</div>
+
 
 <script type="text/javascript" src="javascript/local.js"></script>
 <script type="text/javascript" src="javascript/game.js"></script>
