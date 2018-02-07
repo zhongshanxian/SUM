@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数独游戏</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+	<!--游戏标题-->
+	<div id="title" class="title">
+		<h1>数独游戏</h1>
+	</div>
+
+	<!--游戏区域-->
+	<div id="container" class="container"></div>
+
+	<!--游戏等级-->
+	<div class="level">
+		等级：<select id="level" >
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+		</select>
+		<button id="submit">OK</button>
+	</div>
+
+	<!--按钮组-->
+	<div id="dashBoard" class="dashBoard">
+		<div id="buttons" class="buttons">
+			<button id="check">检查</button>
+			<button id="reset">重置</button>
+			<button id="clear">清除</button>
+			<button id="rebuild">重建</button>
+		</div>
+	</div>
+
+	<!--数字弹出框-->
+	<div id="popupNumbers" class="grid popup-num hidden"
+	>
+		<div class="row">
+			<span>1</span><span>2</span><span>3</span>
+		</div>
+		<div class="row">
+			<span>4</span><span>5</span><span>6</span>
+		</div>
+		<div class="row">
+			<span>7</span><span>8</span><span>9</span>
+		</div>
+		<div class="row">
+			<span class="mark1"></span><span class="empty"></span><span class="mark2"></span>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

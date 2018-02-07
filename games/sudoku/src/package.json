@@ -1,0 +1,27 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "sudoku game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sudoku",
+    "game",
+    "webpack",
+    "js"
+  ],
+  "author": "shanzi",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "babel-loader": "^8.0.0-beta.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.4.0",
+    "gulp-util": "^3.0.8",
+    "webpack": "^3.10.0",
+    "webpack-stream": "^4.0.0"
+  }
+}

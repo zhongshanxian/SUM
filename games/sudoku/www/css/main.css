@@ -1,0 +1,201 @@
+html {
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  background-color: #eee;
+  font-family: "Consolas", "微软雅黑";
+  max-width: 450px;
+}
+body > * {
+  max-width: 450px;
+}
+.title {
+  padding: 1rem 5%;
+  background-color: steelblue;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.2rem 0.3rem rgba(48, 48, 48, 0.5);
+}
+.title h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+  display: inline;
+}
+.hidden {
+  display: none;
+}
+.container {
+  padding-left: 5%;
+}
+.container .row > span {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  height: 24px;
+  line-height: 24px;
+  background-color: white;
+  border: 1px solid #999;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.container .row > span.col_g_right {
+  border-right-width: 1px;
+}
+.container .row > span:first-child {
+  border-left-width: 2px;
+}
+.container .row > span:last-child {
+  border-right-width: 2px;
+}
+.container .row > span.empty {
+  color: white;
+}
+.container .row > span.fixed {
+  background: #ddd;
+}
+.container .row > span.mark1 {
+  background-color: lightblue;
+}
+.container .row > span.mark1.empty {
+  color: lightblue;
+}
+.container .row > span.mark2 {
+  background-color: lightgreen;
+}
+.container .row > span.mark2.empty {
+  color: lightgreen;
+}
+.container .row > span.error {
+  background-color: lightpink;
+}
+.container .row > span.error.empty {
+  color: lightpink;
+}
+.container .row.row_g_bottom > span {
+  border-bottom-width: 1px;
+}
+.container .row:first-child > span {
+  border-top-width: 2px;
+}
+.container .row:last-child > span {
+  border-bottom-width: 2px;
+}
+.level {
+  margin: 10px auto;
+  width: 200px;
+}
+.level > select {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+.level > button {
+  width: 50px;
+  height: 30px;
+  color: white;
+  background-color: steelblue;
+  border-radius: 5px;
+  border: 1px solid steelblue;
+}
+.popup-num {
+  padding-left: 5%;
+  position: absolute;
+  padding-left: 0;
+}
+.popup-num .row > span {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  height: 24px;
+  line-height: 24px;
+  background-color: white;
+  border: 1px solid #999;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.popup-num .row > span.col_g_right {
+  border-right-width: 1px;
+}
+.popup-num .row > span:first-child {
+  border-left-width: 2px;
+}
+.popup-num .row > span:last-child {
+  border-right-width: 2px;
+}
+.popup-num .row > span.empty {
+  color: white;
+}
+.popup-num .row > span.fixed {
+  background: #ddd;
+}
+.popup-num .row > span.mark1 {
+  background-color: lightblue;
+}
+.popup-num .row > span.mark1.empty {
+  color: lightblue;
+}
+.popup-num .row > span.mark2 {
+  background-color: lightgreen;
+}
+.popup-num .row > span.mark2.empty {
+  color: lightgreen;
+}
+.popup-num .row > span.error {
+  background-color: lightpink;
+}
+.popup-num .row > span.error.empty {
+  color: lightpink;
+}
+.popup-num .row.row_g_bottom > span {
+  border-bottom-width: 1px;
+}
+.popup-num .row:first-child > span {
+  border-top-width: 2px;
+}
+.popup-num .row:last-child > span {
+  border-bottom-width: 2px;
+}
+.popup-num .row > span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+.dashBoard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: steelblue;
+  box-sizing: border-box;
+  box-shadow: 0 -0.1rem 0.2rem rgba(48, 48, 48, 0.5);
+  height: 3rem;
+}
+.dashBoard .buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.dashBoard .buttons button {
+  float: left;
+  width: 25%;
+  height: 3rem;
+  font-size: 1.3rem;
+  color: white;
+  font-family: "微软雅黑";
+  border: 1px solid #ccc;
+  background-color: transparent;
+  /*
+			border-right-width: 0;
+			&:last-child {
+				border-right-width: 1px;
+			}
+			*/
+}

@@ -1,0 +1,173 @@
+@shadowBottom : 0 0.2rem 0.3rem rgba(48,48,48,0.5);
+@shadowTop : 0 -0.1rem 0.2rem rgba(48,48,48,0.5);
+@popupCellSize: 40px;
+
+html {
+	font-size: 14px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	background-color: #eee;
+	font-family: "Consolas","微软雅黑";
+	max-width: 450px;
+	>* {
+		max-width: 450px;
+	}
+}
+
+.title {
+	padding: 1rem 5%;
+	background-color: steelblue;
+	color: white;
+	margin-bottom: 2rem;
+	box-shadow: @shadowBottom;
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-family: "微软雅黑";
+		display: inline;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.container {
+	padding-left: 5%;
+
+	.row {
+		>span {
+			display: inline-block;
+			cursor: pointer;
+			text-align: center;
+			width: 10%;
+			height: 24px;
+			line-height: 24px;
+			background-color: white;
+			border: 1px solid #999;
+			border-right-width: 0;
+			border-bottom-width: 0;
+			
+			&.col_g_right {
+				border-right-width: 1px;
+			}
+			&:first-child {
+				border-left-width: 2px;
+			}
+			&:last-child {
+				border-right-width: 2px;
+			}
+
+			&.empty {
+				color: white;
+			}
+			&.fixed {
+				background: #ddd;
+			}
+			&.mark1 {
+				background-color: lightblue; 
+				&.empty {
+					color: lightblue;
+				}
+			}
+			&.mark2 {
+				background-color: lightgreen; 
+				&.empty {
+					color: lightgreen;
+				}
+			}
+			&.error {
+				background-color: lightpink;
+				&.empty {
+					color: lightpink;
+				}
+			}
+		}
+		&.row_g_bottom {
+			>span {
+				border-bottom-width: 1px;
+			}
+		}
+		&:first-child {
+			>span {
+				border-top-width: 2px;
+			}
+		}
+		&:last-child {
+			>span {
+				border-bottom-width: 2px;
+			}
+		}
+	}
+}
+
+.level {
+	margin: 10px auto;
+	width: 200px; 
+	>select {
+		width: 100px;
+		height: 30px;
+		border-radius: 5px;
+	}
+	>button {
+		width: 50px;
+		height: 30px;
+		color: white;
+		background-color: steelblue;
+		border-radius: 5px;
+		border: 1px solid steelblue;
+	}
+}
+
+.popup-num {
+	.container();
+	position: absolute;
+	padding-left: 0;
+	.row {
+		>span {
+			width: @popupCellSize;
+			height: @popupCellSize;
+			line-height: @popupCellSize;
+		}
+	}
+}
+
+.dashBoard {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem 0;
+	background-color: steelblue;
+	box-sizing: border-box;
+	box-shadow: @shadowTop;
+	height: 3rem;
+
+	.buttons {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		button {
+			float: left;
+			width: 25%;
+			height: 3rem;
+			font-size: 1.3rem;
+			color: white;
+			font-family: "微软雅黑";
+			border: 1px solid #ccc;
+			background-color: transparent;
+			/*
+			border-right-width: 0;
+			&:last-child {
+				border-right-width: 1px;
+			}
+			*/
+		}
+	}
+}
